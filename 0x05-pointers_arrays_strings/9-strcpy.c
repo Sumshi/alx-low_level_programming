@@ -7,7 +7,7 @@
  */
 char *_strcpy(char *dest, char *src)
 {
-	int i;/*for iteretaion*/
+	int i = -1;/*for iteretaion*/
 
 		if (dest == NULL)/*means no destination is provided*/
 			return (NULL);
