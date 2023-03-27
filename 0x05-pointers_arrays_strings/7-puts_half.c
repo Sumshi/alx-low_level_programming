@@ -5,24 +5,17 @@
  */
 void puts_half(char *str)
 {
-	int i;/*for iterarion*/
-	int length = 0;/*to store string length*/
+	int string = 0, n;
 
-	/*get the length of string first*/
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		length++;
-	}
-	if (length % 2 == 0)/*for even length of string*/
-	{
-		for (i = length / 2; str[i] != '\0'; i++)/*to get half of the string*/
-			_putchar(str[i]);
-		_putchar('\n');
-	}
-	else if (length % 2 != 0)/*for odd length of string*/
-	{
-		for (i = (length - 1) / 2; str[i] != '\0'; i++)
-			_putchar(str[i]);
-		_putchar('\n');
-	}
+	while (str[string] != '\0')
+		string++;
+	if (string + 1 % 2 != '0')
+		n = (string - 1) / 2;
+	else
+		n = (string / 2);
+	n++;
+
+	for (string = n; str[string] != '\0'; string++)
+		_putchar(str[string]);
+	_putchar('\n');
 }
