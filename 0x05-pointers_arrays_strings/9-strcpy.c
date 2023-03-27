@@ -7,11 +7,12 @@
  */
 char *_strcpy(char *dest, char *src)
 {
-	int i = -1;/*for iteretaion*/
+	int i = -1;
 
-		if (dest == NULL)/*means no destination is provided*/
-			return (NULL);
-	for (i = 0; src[i] != 0; i++)/*it will iterate through all elements in src*/
-		dest[i] = src[i];/*for each iteration made by src will be strored in dest*/
+	do {
+		i++;
+		dest[i] = src[i];
+	} while (src[i] != '\0');
+
 	return (dest);
 }
