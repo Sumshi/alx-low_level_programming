@@ -13,7 +13,7 @@ void print_rev(char *s)
 
 		length++;
 
-	for (i = length; i >= 0; i--)/*decrements the length hence reverse order*/
+	for (i = length - 1; i >= 0; i--)/*decrements the length hence reverse order*/
 
 		_putchar(s[i]);
 
