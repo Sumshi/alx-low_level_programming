@@ -13,10 +13,10 @@ char *_strchr(char *s, char c)
 	{
 		if (s[i] == c)
 		{
-			return (&s[i]);
+			return (s + i);
 /*&s[i], the function is returning a pointer to the memory*/
 /*location of the first occurrence of the character*/
 		}
 	}
-	return ('\0');
+	return (NULL);
 }
