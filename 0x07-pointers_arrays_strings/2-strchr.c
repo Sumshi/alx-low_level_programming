@@ -18,5 +18,5 @@ char *_strchr(char *s, char c)
 /*location of the first occurrence of the character*/
 		}
 	}
-	return (NULL);
+	return ('\0');
 }
