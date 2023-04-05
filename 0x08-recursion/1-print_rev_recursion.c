@@ -5,10 +5,11 @@
  * Return: Always 0.
  */
 void _print_rev_recursion(char *s)
-{	if (*s)
+{	
+	if (*s)
 	{
 		_print_rev_recursion(s + 1);/*calls itself in reverse*/
 		_putchar(*s);
-/*s + 1, moves pointer to the next character*/
+/*(s + 1)moves pointer to the next character, till '\0'*/
 	}
 }
