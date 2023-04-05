@@ -11,7 +11,6 @@ int is_palindrome(char *s)
 
 	return (palindrome(s, 0, len - 1));
 }
-
 /**
  * palindrome -this function help
  * @s: string pointer
