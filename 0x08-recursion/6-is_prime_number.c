@@ -23,6 +23,12 @@ int check(int a, int b)
 int is_prime_number(int n)
 {
 	if (n == 2)/*is prime*/
+	{
 		return (1);
+	}
+	else if (n <= 1)/*prime no starts from 2*/
+	{
+	return (0);
+	}
 	return (check(2, n));
 }
