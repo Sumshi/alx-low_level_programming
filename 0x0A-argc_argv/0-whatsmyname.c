@@ -7,7 +7,7 @@
  */
 int main(int argc, char *argv[])
 {
-	if (argc == 1)
+	if (argc == 1)/*shows that there is one argument*/
 		printf("%s\n", *argv);
 	return (0);
 }
