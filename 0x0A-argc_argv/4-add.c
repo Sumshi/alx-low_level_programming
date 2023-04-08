@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>/*atoi function library*/
 /**
- * main - multiplies 2 numbers
+ * main - adds positive numbers.
  *@argc: number of arguments
  *@argv: array size of argc
  * Return: Always 0.
