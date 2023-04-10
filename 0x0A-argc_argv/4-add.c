@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<ctype>
+#include<ctype.h>
 #include<stdlib.h>/*atoi function library*/
 /**
  * main - adds positive numbers.
@@ -14,9 +14,10 @@ int main(int argc, char *argv[])
 
 	if (argc >= 1)
 	{
+	
 		for (i = 1; i < argc; i++)
 		{
-			if (!isdigit(argv[i]))
+			if (!isdigit(*argv[i]))
 			{
 				printf("Error\n");
 				return (1);
