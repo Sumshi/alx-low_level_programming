@@ -1,37 +1,37 @@
+#include <stdlib.h>
 #include "main.h"
-#include <stddef.h>
-#include<stdlib.h>
 /**
- * str_concat - concatinates two strings
- *@s1: string parameter1
- *@s2: string parameter 2
- *Return: pointer to the array, or NULL if it fails
+ * str_concat - concatinates a string
+ * @s1: source string
+ * @s2: destination string
+ * Return: pointer to the allocated space
  */
 char *str_concat(char *s1, char *s2)
 {
-
-	char *concatinated_str;
-	int index, concatinated_index = 0, length = 0;
+	int i;/*for s1 iteration*/
+	int j;/*for s2 iteration*/
+	char *ptr;/*stores concatinated string*/
 
 	if (s1 == NULL)
-		s1 = "";
-
+	{
+		s1 = "";/*if null sets it to empty string*/
+	}
 	if (s2 == NULL)
+	{
 		s2 = "";
+	}
+	/*allocating memory for concatinated string*/
+	ptr = malloc(strlen(s1) + strlen(s2) + 1);/*+1 for null*/
+		for (i = 0; s1[i] != '\0'; i++)
+		{
+			/*copies to ptr until it reaches null*/
+			ptr[i] = s1[i];
 
-	for (index = 0; s1[index] || s2[index]; index++)
-		length++;
-
-	concatinated_str = malloc(sizeof(char) * length);
-
-	if (concatinated_str == NULL)
-		return (NULL);
-
-	for (index = 0; s1[index]; index++)
-		concatinated_str[concatinated_index++] = s1[index];
-
-	for (index = 0; s2[index]; index++)
-		concatinated_str[concatinated_index++] = s2[index];
-
-	return (concatinated_str);
+		}
+	for (j = 0; s2[j] != '\0'; j++)
+	{
+		ptr[i + j] = s2[j];/*not modifying s1*/
+	}
+	ptr[i + j] = '\0';/*stops copying when null is reached*/
+		return (ptr);
 }
