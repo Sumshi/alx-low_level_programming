@@ -20,18 +20,25 @@ char *str_concat(char *s1, char *s2)
 	{
 		s2 = "";
 	}
-	/*allocating memory for concatinated string*/
-	ptr = malloc(strlen(s1) + strlen(s2) + 1);/*+1 for null*/
-		for (i = 0; s1[i] != '\0'; i++)
-		{
-			/*copies to ptr until it reaches null*/
-			ptr[i] = s1[i];
 
-		}
+	/*allocating memory for concatinated string*/
+
+	ptr = malloc(strlen(s1) + strlen(s2) + 1);/*+1 for null*/
+
+	if (ptr == NULL)
+	{
+		return (NULL);/*mallocs return*/
+	}
+	for (i = 0; s1[i] != '\0'; i++)
+	{
+		/*copies to ptr until it reaches null*/
+		ptr[i] = s1[i];
+
+	}
 	for (j = 0; s2[j] != '\0'; j++)
 	{
 		ptr[i + j] = s2[j];/*not modifying s1*/
 	}
 	ptr[i + j] = '\0';/*stops copying when null is reached*/
-		return (ptr);
+	return (ptr);
 }
