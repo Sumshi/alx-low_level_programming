@@ -7,6 +7,7 @@
  * @c: initialized char value
  *Return: pointer to the array, or NULL if it fails
  */
+/*creates space in heap memory and fills it with character c*/
 char *create_array(unsigned int size, char c)
 {
 	char *array;
@@ -17,7 +18,7 @@ char *create_array(unsigned int size, char c)
 		return (NULL);
 	}
 
-	array = malloc(size * sizeof(char));
+	array = malloc(size * sizeof(char));/*allocating space*/
 
 	if (array == 0)
 	{
@@ -25,7 +26,7 @@ char *create_array(unsigned int size, char c)
 	}
 	for (i = 0; i < size; i++)
 	{
-		array[i] = c;
+		array[i] = c;/*assigns c to space allocated*/
 	}
 	return (array);
 }
