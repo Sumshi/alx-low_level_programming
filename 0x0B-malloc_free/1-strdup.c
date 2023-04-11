@@ -1,34 +1,35 @@
+
+#include <stdlib.h>
 #include "main.h"
-#include <stddef.h>
-#include<string.h>
-#include<stdlib.h>
 /**
- *_strdup - duplicates a string
- *@str: function parameter
- *Return: pointer to the duplicated string
+ * _strdup - duplicates a string
+ * @str: function parameter
+ * Return: pointer to the duplicated string
  */
 char *_strdup(char *str)
 {
-	char *new_str;/* stores copied string*/
-	int length;/*stores string length*/
+	char *ptr; /* stores copied string */
+	int length = 0;   /* stores string length */
 	int i;
 
-	if (new_str == NULL)
-	{
-		return (NULL);
-	}
 	if (str == NULL)
-	{
 		return (NULL);
-	}
-	for (length = 0; str[length] != '\0'; str++)/*increments tsring length*/
+	/* calculate the length of the string */
+	for (i = 0; str[i]; i++)
+		length++;
+	/* allocate memory for the duplicated string */
+	ptr = malloc(sizeof(char) * (length + 1));
 
-		new_str = malloc((length * sizeof(char)) + 1);
-			/*plus 1 for the null terminator*/
-			for (i = 0; str[i] != '\0'; i++)
-			{
-				new_str[i] = str[i];/*copies str string*/
-			}
-	new_str[i] = '\0';
-	return (new_str);
+	if (ptr == NULL)
+		return (NULL);
+	/* copy the string */
+	for (i = 0; str[i]; i++)
+	{
+		ptr[i] = str[i];
+	}
+
+	ptr[length] = '\0'; /* add the null terminator */
+
+	return (ptr);
+	/*free (ptr);*/
 }
