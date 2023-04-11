@@ -7,7 +7,7 @@
  *@str: function parameter
  *Return: pointer to the duplicated string
  */
-char *_strdup(char *str);
+char *_strdup(char *str)
 {
 	char *new_str;/* stores copied string*/
 	int length;/*stores string length*/
@@ -23,7 +23,7 @@ char *_strdup(char *str);
 	}
 	for (length = 0; str[length] != '\0'; str++)/*increments tsring length*/
 
-		new_str = malloc((length * sizeof(char)) + 1)
+		new_str = malloc((length * sizeof(char)) + 1);
 			/*plus 1 for the null terminator*/
 			for (i = 0; str[i] != '\0'; i++)
 			{
