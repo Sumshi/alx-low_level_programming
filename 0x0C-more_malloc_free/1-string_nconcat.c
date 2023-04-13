@@ -14,7 +14,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *ptr;/*stores concatinated string*/
 	unsigned int i; /*stores s1 string length*/
 	unsigned int j; /*stores s2 string length*/
-	unsigned int  length;
 
 	if (s1 == NULL)
 	{
@@ -30,13 +29,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	/*If n is greater or equal to the length of s2 then use the entire string s2*/
 	if (n >= j)
 	{
-		length = j;
+		n = j;
 	}
-	else
-	{
-		length = n;
-	}
-	ptr = malloc(sizeof(char) * (length + i + 1));
+	
+	ptr = malloc(sizeof(char) * (n + i + 1));
 	if (ptr == NULL)
 	{
 		return (NULL); /*malloc fails return*/
