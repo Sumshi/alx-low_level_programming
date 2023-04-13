@@ -42,7 +42,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 /*strcat has only 2 arguments, source and destination*/
 
-	strcat(ptr, s1);/*concatinates s1 to ptr*/
+	strcpy(ptr, s1);/*copies s1 to ptr*/
 /*strncat takes 3 arguments source,dest and maximum no of bytes*/
 /*appends at most n characters from s2 to the end of ptr*/
 	strncat(ptr, s2, n);
