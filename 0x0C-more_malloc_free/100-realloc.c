@@ -8,7 +8,7 @@
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	void *new_ptr;
+	void *new_ptr;/*new memory*/
 
 	if (new_size == 0)
 	{
@@ -23,17 +23,18 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 
 	if (new_size <= old_size)
 	{
-		return (ptr);
+		return (ptr);/*returns pointer to previous memory*/
 	}
 
-	new_ptr = malloc(new_size);
+	new_ptr = malloc(new_size);/*allocates memory for new_ptr*/
 
 	if (new_ptr == NULL)
 	{
-		return (NULL);
+		return (NULL);/*means allocation was unsuccessful*/
 	}
 
-	memcpy(new_ptr, ptr, old_size);
+	memcpy(new_ptr, ptr, old_size);/*copies data old memory to new one*/
+/*ptr points to old memory block*/
 	free(ptr);
 
 	return (new_ptr);
