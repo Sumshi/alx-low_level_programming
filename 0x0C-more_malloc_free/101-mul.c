@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[2]);
-	product = (long int) num1 * num2;
+	product = (unsigned long long int) num1 * num2;
 	 printf("%ld\n", product);
 	return (0);
 }
