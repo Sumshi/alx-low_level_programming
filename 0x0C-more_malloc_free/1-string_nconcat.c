@@ -19,7 +19,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	ptr = malloc(sizeof(char) * (len1 + n + 1));
 	/*plus 1 for null byte*/
-
 	if (ptr == NULL)
 	{
 		return (NULL);/*malloc fails return*/
@@ -33,16 +32,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = "";
 	}
 	/*gettin string lengths for s1 and s2*/
-
 	len1 = strlen(s1);
 	len2 = strlen(s2);
-
 	/*If n is greater or equal to the length of s2 then use the entire string s2*/
 	if (n >= len2)
 	{
 		n = len2;
 	}
-
 	for (i = 0; s1[i] != '\0'; i++)
 	{
 		ptr[i] = s1[i];/*copies s1 to ptr*/
@@ -53,6 +49,5 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	/*appends at most n characters from s2 to the end of ptr*/
 	ptr[i] = '\0';
-
 	return (ptr);
 }
