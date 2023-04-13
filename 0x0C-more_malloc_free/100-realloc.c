@@ -10,15 +10,18 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	void *new_ptr;/*new memory*/
 
+/*If ptr is NULL, then the call is equivalent to malloc(new_size)*/
 	if (ptr == NULL)
 	{
 		return (malloc(new_size));
 	}
+/*If new_size is equal to zero, and ptr is not NULL, return NULL*/
 	if (new_size == 0)
 	{
 		free(ptr);
 		return (NULL);
 	}
+/*If new_size == old_size do not do anything and return ptr*/
 	if (new_size == old_size)
 	{
 		return (ptr);
@@ -35,8 +38,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		return (NULL);/*means allocation was unsuccessful*/
 	}
 
-	memcpy(new_ptr, ptr, old_size);/*copies data old memory to new one*/
-/*ptr points to old memory block*/
+	memcpy(new_ptr, ptr, old_size);/*copies old _size bytes from ptr to new _ptr*/
 	free(ptr);
 
 	return (new_ptr);
