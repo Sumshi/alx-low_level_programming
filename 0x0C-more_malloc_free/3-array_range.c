@@ -11,7 +11,7 @@ int *array_range(int min, int max)
 	int size;/*size of array elements*/
 	int i;/*array elements*/
 
-	size = (max - min) + 1;/*plus one for endpoint cz it is range*/
+	size = max - min + 1;/*plus one for endpoint cz it is range*/
 
 	ptr = malloc(sizeof(int) * size);/*allocates memory for the array*/
 
