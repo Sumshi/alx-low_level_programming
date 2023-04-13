@@ -42,7 +42,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (NULL); /*malloc fails return*/
 	}
 	/*strcat has only 2 arguments, source and destination*/
-	strcat(ptr, s1); /*copies s1 to ptr*/ /*tried also strcat works fine*/
+	strcpy(ptr, s1); /*copies s1 to ptr*/ /*tried also strcat works fine*/
 	/*strncat takes 3 arguments source,dest and maximum no of bytes*/
 	strncat(ptr, s2, n);
 
