@@ -12,11 +12,13 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *ptr;/*stores concatinated string*/
-	unsigned int i = 0;/*stores s1 string length*/
-	unsigned int j = 0;/*stores s2 string length*/
+	unsigned int i;/*iterates over s1*/
+	unsigned int j;/*iterates over s2*/
+	unsigned int len1 = 0; /*stores s1 string length*/
+	unsigned int len2 = 0; /*stores s2 string length*/
 
-	ptr = malloc(sizeof(char) * (i + n + 1));
-/*plus 1 for null byte, u can use j instead of i*/
+	ptr = malloc(sizeof(char) * (len1 + n + 1));
+	/*plus 1 for null byte*/
 
 	if (ptr == NULL)
 	{
@@ -30,21 +32,27 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		s2 = "";
 	}
-/*gettin string lengths for s1 and s2*/
+	/*gettin string lengths for s1 and s2*/
 
-	i = strlen(s1);
-	j = strlen(s2);
+	len1 = strlen(s1);
+	len2 = strlen(s2);
 
-/*If n is greater or equal to the length of s2 then use the entire string s2*/
-	if (n >= j)
+	/*If n is greater or equal to the length of s2 then use the entire string s2*/
+	if (n >= len2)
 	{
-		n = j;
+		n = len2;
 	}
-/*strcat has only 2 arguments, source and destination*/
 
-	strcpy(ptr, s1);/*copies s1 to ptr*/
-/*strncat takes 3 arguments source,dest and maximum no of bytes*/
-/*appends at most n characters from s2 to the end of ptr*/
-	strncat(ptr, s2, n);
+	for (i = 0; s1[i] != '\0'; i++)
+	{
+		ptr[i] = s1[i];/*copies s1 to ptr*/
+	}
+	for (j = 0; j < n; j++, i++)
+	{
+		ptr[i] = s2[j];/* append n bytes of s2 to ptr */
+	}
+	/*appends at most n characters from s2 to the end of ptr*/
+	ptr[i] = '\0';
+
 	return (ptr);
 }
