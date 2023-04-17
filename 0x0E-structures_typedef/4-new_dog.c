@@ -25,13 +25,14 @@ dog_t *new_dog(char *name, float age, char *owner)
 	name_copy = malloc(strlen(name) + 1);/*+1 for null bit*/
 	if (name_copy == NULL)
 	{
-		/*free(new_dog);frees memory previously allocated for dog_t*/
+		free(new_dog);/*frees memory previously allocated for dog_t*/
 		return (NULL);
 	}
 	owner_copy = malloc(strlen(owner) + 1);
 	if (owner_copy == NULL)
 	{
-		/*free(name_copy);frees memory previously allocated for name_copy*/
+		free(name_copy);/*frees memory previously allocated for name_copy*/
+		free(new_dog);
 		return (NULL);
 	}
 	/* Copy the name and owner strings into the new memory */
