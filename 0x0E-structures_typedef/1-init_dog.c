@@ -13,7 +13,7 @@
 
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	if (d == NULL)
+	if (d == NULL)/*no need to return null since function is void*/
 		d = malloc(sizeof(struct dog));/*a pointer to struct dog*/
 	d->name = name;/*or  (*d).name = name*/
 	d->age = age;/* (*d).age = age*/
