@@ -2,12 +2,12 @@
 /**
  * print_all - prints anything
  * @format: list of types of arguments passed to the function
- * Return: Always 0.
+ * Return: void
  */
 void print_all(const char * const format, ...)
 {
 	int i = 0;
-	float f;
+	double f;
 	char *s;
 	va_list args;
 
@@ -30,13 +30,14 @@ void print_all(const char * const format, ...)
 				s = va_arg(args, char *);
 				if (s == NULL)
 					printf("(nil)");
-				printf("%s", s);
+				else
+					printf("%s", s);
 				break;
 			default:
 				i++;
 				continue;
 		}
-		if (format[i + 1])
+		if (format[i + 1] != '\0')
 			printf(", ");
 		i++;
 	}
