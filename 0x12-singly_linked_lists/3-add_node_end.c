@@ -8,7 +8,7 @@
 list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *new_node;/*node to be added at the end of the list*/
-	list_t *temp;/*to traverse the list*/
+	list_t *current;/*to traverse the list*/
 	size_t len;
 
 	if (str == NULL)/*checks if the input string is null*/
@@ -40,11 +40,11 @@ list_t *add_node_end(list_t **head, const char *str)
 		return (new_node);
 	}
 	/*if list is not empty*/
-	temp = *head;/*traverses till end is reached*/
-	while (temp->next != NULL)
+	current = *head;/*traverses till end is reached*/
+	while (current->next != NULL)
 	{
-		temp = temp->next;
+		current = current->next;
 	}
-	temp->next = new_node;
+	current->next = new_node;
 	return (new_node);
 }
