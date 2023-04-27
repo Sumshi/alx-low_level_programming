@@ -1,6 +1,6 @@
 section .data
-    hello db 'Hello, Holberton', 0
-    format db '%s\n', 0
+    hello db 'Hello, Holberton', 10, 0 ; 10 is ASCII value for newline
+    format db '%s', 0
 
 section .text
     global main
@@ -14,9 +14,9 @@ main:
     ; Pass the address of hello and format to printf as arguments
     mov rdi, format
     mov rsi, hello
-    xor eax, eax
     
     ; Call printf function to print the string
+    xor eax, eax
     call printf
     
     ; Clean up the stack and exit program
