@@ -8,15 +8,15 @@
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *new_node;
-	listint_t *previous;
-	listint_t *current;
-	unsigned int i;
+	listint_t *new_node;/*pointer to the new node*/
+	listint_t *previous;/*node before the new node*/
+	listint_t *current;/*pointer at the given index*/
+	unsigned int i;/*for looping*/
 
-	if (head == NULL)
+	if (head == NULL)/*indicates insertion failed*/
 		return (NULL);
 
-	if (idx == 0)
+	if (idx == 0)/*new node is created*/
 	{
 		new_node = malloc(sizeof(listint_t));
 		if (new_node == NULL)
