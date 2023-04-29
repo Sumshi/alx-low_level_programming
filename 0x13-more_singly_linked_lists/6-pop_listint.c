@@ -11,7 +11,7 @@ int pop_listint(listint_t **head)
 
 	if (*head == NULL)/*checks if list is empty*/
 	{
-		return 0;
+		return (0);
 	}
 
 	/* Save the data of the head node in data variable*/
@@ -24,5 +24,5 @@ int pop_listint(listint_t **head)
 	/* Free the memory allocated for the old head node */
 	free(current_node);
 
-	return data;/*returns saved data of deleted node*/
-}	
+	return (data);/*returns saved data of deleted node*/
+}
