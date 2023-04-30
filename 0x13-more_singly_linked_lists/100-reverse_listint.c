@@ -9,7 +9,7 @@ listint_t *reverse_listint(listint_t **head)
 	listint_t *previous_node = NULL;/*no previous node*/
 	listint_t *next_node = previous_node;
 
-	while (*head)/*traverses till current is null*/
+	while (*head)/*traverses till head is null*/
 	{
 		next_node = (*head)->next;/*stores the next node*/
 		(*head)->next = previous_node;/*reverses pointer of current node*/
