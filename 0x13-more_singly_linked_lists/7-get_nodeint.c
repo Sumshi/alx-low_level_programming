@@ -7,16 +7,16 @@
  */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-	unsigned int i;
+	unsigned int i;/*for iterating*/
 
-	if (head == NULL)
+	if (head == NULL)/*this indicates empty list*/
 	{
-		return (NULL);
+		return (NULL);/*node doesnt exist*/
 	}
-	for (i = 0; i < index; i++)
+	for (i = 0; i < index; i++)/*iterates the list to find the nth node*/
 	{
 		head = head->next;
-		if (head == NULL)
+		if (head == NULL)/*becomes null b4 reaching nth node*/
 			return (NULL);
 	}
 	return (head);
