@@ -1,5 +1,4 @@
 #include "main.h"
-#define BUFFER_SIZE 1024
 /**
  * main - program execution begins
  * @argc: number of arguments
@@ -43,15 +42,10 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);/*exit with code 98 for read error*/
 	}
-	if (close(file_from) == -1)
+	if (close(file_from) == -1 || close(file_to) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
-		exit(100);/*exit with code 100 for file descriptor error*/
-	}
-	if (close(file_to) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
-		exit(100);/*exit with code 100 for file descriptor error*/
+		dprintf(STDERR_FILENO, "Error: Can't close file descriptors\n");
+		exit(100);
 	}
 	return (0);
 }
