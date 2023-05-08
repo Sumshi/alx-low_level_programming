@@ -13,12 +13,16 @@ int main(int argc, char *argv[])
 	char buffer[BUFFER_SIZE];
 
 	if (argc != 3)
+	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-	exit(97);
+		exit(97);
+	}
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)/*cannot read file*/
+	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-	exit(98);/*read errror*/
+		exit(98);/*read errror*/
+	}
 	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (file_to == -1)/*cannot write to the file*/
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
