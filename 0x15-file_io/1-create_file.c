@@ -12,11 +12,13 @@ int create_file(const char *filename, char *text_content)
 	mode_t mode;/*to set permission for the created file*/
 
 	mode = S_IRUSR | S_IWUSR;/*rw-------*/
+/*intead of mode u can just simply use 600*/
 	if (filename == NULL)
 		return (-1);
 /*create a file with write only access and truncate of any existing content*/
 /*mode contains the permission of the file*/
 	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, mode);
+/*fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);*/
 	if (fd == -1)/*openning or creating file fails*/
 		return (-1);
 	if (text_content != NULL)
