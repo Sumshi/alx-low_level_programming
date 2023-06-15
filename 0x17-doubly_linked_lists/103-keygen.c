@@ -1,4 +1,5 @@
 #include "lists.h"
+
 /**
  * main - Generates and prints passwords for the crackme5 executable.
  * @argc: The number of arguments supplied to the program.
@@ -34,6 +35,7 @@ int main(__silent int argc, char *argv[])
 	}
 	srand(tmp ^ 14);
 	password[3] = codex[rand() & 63];
+
 	tmp = 0;
 	for (i = 0; i < len; i++)
 		tmp += (argv[1][i] * argv[1][i]);
