@@ -17,6 +17,8 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	new_node->n = n;/*assigns data to the new_node*/
 	new_node->prev = NULL;
 	new_node->next = *head;
+	if (*head != NULL)/*means list is not empty*/
+		(*head)->prev = new_node;
 	*head = new_node;
 
 	return (new_node);
