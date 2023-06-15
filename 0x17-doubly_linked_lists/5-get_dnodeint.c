@@ -8,14 +8,13 @@
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
 	unsigned int count = 0;/*for iterating*/
-	dlistint_t *current_node = head;/*traverse list from head*/
 
-	while (current_node != NULL)
+	while (head != NULL)
 	{
 		if (count == index)
-			return current_node;
+			return (head);
 		count++;
-		current_node = current_node->next;
+		head = head->next;
 	}
 	return (NULL);/*node not found*/
 }
