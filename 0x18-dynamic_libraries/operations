@@ -1,0 +1,34 @@
+step 1:
+
+Write the C functions in a .c file. For this example, let's assume you have the following functions defined in a file named 100-operations.c:
+int add(int a, int b) {
+    return a + b;
+}
+int sub(int a, int b) {
+    return a - b;
+}
+int mul(int a, int b) {
+    return a * b;
+}
+int div(int a, int b) {
+    return a / b;
+}
+int mod(int a, int b) {
+    return a % b;
+}
+
+step 2:
+Compile the .c file into an object file 
+use: gcc -c -fPIC 100-operations.c  100-operations.o
+Then create the dynamic library. Use the -shared option to create the dynamic library.
+gcc -shared -o 100-operations.so 100-operations.o
+
+step 3:
+Now, you can use the dynamic library in Python. Create a Python script, for example, 100-tests.py, and use the ctypes module to load the dynamic library and call the C functions from Python.
+
+step 4:
+Make sure the dynamic library file (100-operations.so) and the Python script (100-tests.py) are in the same directory. Run the Python script: python3 100-tests.py
+
+The script will generate random values for a and b, call the C functions from the dynamic library, and print the results.
+
+The function names in the C file must match the function names used in the Python script
