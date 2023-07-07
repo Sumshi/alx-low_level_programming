@@ -22,15 +22,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	/*calculate the index of the key*/
 	index = key_index((const unsigned char *)key, ht->size);
 	for (i = index; ht->array[i]; i++)
-	{
+	{/*checks if the key already exists*/
 		if (strcmp(ht->array[i]->key, key) == 0)
-		{
-			free(ht->array[i]->value);
+		{/*if matching key is found*/
+			free(ht->array[i]->value);/*frees the existing value*/
 			ht->array[i]->value = value_copy;
 			return (1);
 		}
 	}
-
 	new_node = malloc(sizeof(hash_node_t));
 	if (new_node == NULL)/*memory allocation failed*/
 	{
@@ -38,7 +37,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	}
 	new_node->key = strdup(key);
-	if (new_node->key == NULL)/*if key duplivation fails*/
+	if (new_node->key == NULL)/*if key duplication fails*/
 	{
 		free(new_node);
 		return (0);
