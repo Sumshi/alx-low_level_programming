@@ -18,19 +18,18 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	node = ht->array[index];
 	if (node == NULL)
 	{
-		return (NULL);
+		return (NULL);/*means no element at that index*/
 	}
-
-	while (node)
+	while (node != NULL)
 	{
 		if (strcmp(node->key, key) == 0)
-		{
+		{/*if a matching key is found, it returns its value*/
 			return (node->value);
 		}
 		else
-		{
+		{/*if not a matching key it goes to the next node*/
 			node = node->next;
 		}
 	}
-	return (NULL);
+	return (NULL);/*means that the key could not be found*/
 }
