@@ -8,7 +8,7 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *new_node;
+	hash_node_t *new_node;/*will have the key and value*/
 	char *value_copy;
 	unsigned long int index, i;
 
@@ -45,6 +45,5 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new_node->value = value_copy;
 	new_node->next = ht->array[index];
 	ht->array[index] = new_node;
-
 	return (1);
 }
