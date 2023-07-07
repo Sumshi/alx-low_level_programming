@@ -10,14 +10,14 @@ void hash_table_print(const hash_table_t *ht)
 	char *comma_flag = "";
 	unsigned long int index = 0;
 
-	if (ht != NULL)
+	if (ht)
 	{
 		printf("{");
 		while (index < ht->size)
 		{
 			tmp_node = ht->array[index];
 
-			while (tmp_node != NULL)
+			while (tmp_node)
 			{
 				printf("%s", comma_flag);
 				comma_flag = ", ";
