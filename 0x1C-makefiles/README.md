@@ -29,10 +29,10 @@ Variables are set using the syntax: variable_name = value
 They are referenced using the syntax: $(variable_name).
 
 	example:
-CC = gcc
-CFLAGS = -Wall -O2
-all: my_program
-my_program: main.c utils.c
+	CC = gcc
+	CFLAGS = -Wall -O2
+	all: my_program
+	my_program: main.c utils.c
     $(CC) $(CFLAGS) -o $@ $^
 
 In this example, CC and CFLAGS are variables used to store the compiler and compiler flags respectively.
