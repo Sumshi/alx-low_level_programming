@@ -25,11 +25,11 @@ test: Executes tests on the built software.
 
 Variables in Makefiles are used to store values that can be reused throughout the file. They allow you to write more maintainable and flexible Makefiles
 
-		Variables are set using the syntax: variable_name = value
-		They are referenced using the syntax: $(variable_name).
+Variables are set using the syntax: variable_name = value
+They are referenced using the syntax: $(variable_name).
 
-		 example:
-	CC = gcc
+	example:
+CC = gcc
 CFLAGS = -Wall -O2
 all: my_program
 my_program: main.c utils.c
