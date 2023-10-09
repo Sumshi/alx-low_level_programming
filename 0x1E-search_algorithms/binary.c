@@ -13,27 +13,27 @@ int binary_search(int *array, size_t size, int value)
 	size_t mid, left = 0, right = size - 1;
 	size_t i;
 
-    /*left = start, right = end, mid = middle element*/
+	/*left = start, right = end, mid = middle element*/
 	if (array == NULL)
 	{
 		return (-1);
 	}
-    /*loop continous as long as left is less than right*/
+	/*loop continous as long as left is less than right*/
 	while (left <= right)
 	{
 		printf("Searching in array: ");
-			for (i = left; i <= right; i++)
+		for (i = left; i <= right; i++)
+		{
+			printf("%d", array[i]);
+			if (i < right)
 			{
-				printf("%d", array[i]);
-				if (i < right)
-				{
-					printf(", ");
-				}
-				else
-				{
-					printf("\n");
-				}
+				printf(", ");
 			}
+			else
+			{
+				printf("\n");
+			}
+		}
 		mid = (left + right) / 2;
 		if (array[mid] == value)
 			return (mid);
