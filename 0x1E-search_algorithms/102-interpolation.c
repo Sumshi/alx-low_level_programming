@@ -8,28 +8,28 @@
  */
 int interpolation_search(int *array, size_t size, int value)
 {
-	size_t i, l, r;
+	size_t pos, l, h;/*l = low, h = high*/
 
 	if (array == NULL)
 		return (-1);
-
-	for (l = 0, r = size - 1; r >= l;)
-	{
-		i = l + (((double)(r - l) / (array[r] - array[l])) * (value - array[l]));
-		if (i < size)
-			printf("Value checked array[%ld] = [%d]\n", i, array[i]);
+	/*initialize first and last elements of the array*/
+	for (l = 0, h = size - 1; h >= l;)
+	{/*interpolation formula to calculate the estimated position*/
+		pos = l + (((double)(h - l) / (array[h] - array[l])) * (value - array[l]));
+		if (pos < size)/*value within range*/
+			printf("Value checked array[%ld] = [%d]\n", pos, array[pos]);
 		else
 		{
-			printf("Value checked array[%ld] is out of range\n", i);
+			printf("Value checked array[%ld] is out of range\n", pos);
 			break;
 		}
 
-		if (array[i] == value)
-			return (i);
-		if (array[i] > value)
-			r = i - 1;
+		if (array[pos] == value)
+			return (pos);
+		if (array[pos] > value)
+			h = pos - 1;
 		else
-			l = i + 1;
+			l = pos + 1;
 	}
 
 	return (-1);
